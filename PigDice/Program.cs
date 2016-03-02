@@ -23,6 +23,12 @@ namespace PigDice
                 {
                     PlayerTurn = false;
                 }
+                else
+                {
+                    Player1.TurnScore = Player1.TurnScore + CurrentRoll;
+                    Console.WriteLine($"Your Score this turn is currently {Player1.TurnScore}");
+                }
+
 
                 Console.WriteLine($"The Dice Roll was {CurrentRoll}");
                 //else add roll to turnscore
