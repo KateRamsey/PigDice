@@ -32,9 +32,9 @@ namespace PigDice
 
             while(GameStillGoing)
             {
-                Console.WriteLine();
                 Console.WriteLine($"It's Player {(CurrentPlayerNumber+1)}'s turn!");
                 Console.WriteLine($"Your current score is { Players[CurrentPlayerNumber].Score}");
+                Console.WriteLine();
                 while (PlayerTurn)
                 {
                     CurrentRoll = DiceRoll(r);
@@ -42,6 +42,7 @@ namespace PigDice
                     if (CurrentRoll == 1)
                     {
                         PlayerTurn = false;
+                        Console.WriteLine("Bummer, lose your turn");
                     }
                     else
                     {
@@ -55,9 +56,11 @@ namespace PigDice
                         }
 
                         Console.WriteLine($"Your score this turn is currently {TurnScore}, Which would make your score {(Players[CurrentPlayerNumber].Score + TurnScore)} if you bank now");
+                        Console.WriteLine();
                         Console.Write($"Would you like to bank your {TurnScore} or roll again? ");
                         Console.WriteLine("Please enter B or R");
                         BankOrRoll = char.Parse(Console.ReadLine());
+                        Console.WriteLine();
                         while (BankOrRoll != 'B' && BankOrRoll != 'b' && BankOrRoll != 'R' && BankOrRoll != 'r')
                         {
                             Console.WriteLine("Please enter B or R");
@@ -72,9 +75,11 @@ namespace PigDice
 
                     }
                 }
-                Console.WriteLine("It's not your turn anymore");
-                //rotate player
-                if(CurrentPlayerNumber == NumOfPlayers - 1)
+                Console.WriteLine("It's not your turn anymore, press enter");
+                Console.ReadLine();
+                Console.Clear();
+
+                if (CurrentPlayerNumber == NumOfPlayers - 1)
                 {
                     CurrentPlayerNumber = 0;
                 }
