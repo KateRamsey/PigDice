@@ -34,6 +34,7 @@ namespace PigDice
             {
                 Console.WriteLine();
                 Console.WriteLine($"It's Player {(CurrentPlayerNumber+1)}'s turn!");
+                Console.WriteLine($"Your current score is { Players[CurrentPlayerNumber].Score}");
                 while (PlayerTurn)
                 {
                     CurrentRoll = DiceRoll(r);
