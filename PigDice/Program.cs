@@ -12,13 +12,12 @@ namespace PigDice
         {
             Console.WriteLine("Welcome to Pie Dice");
             Player Player1 = new Player();
-            Player1.Score = 5;
-            Console.WriteLine($"Player Score is {Player1.Score}");
             bool PlayerTurn = true;
             int CurrentRoll;
             while (PlayerTurn)
             {
                 CurrentRoll = DiceRoll();
+                Console.WriteLine($"The Dice Roll was {CurrentRoll}");
                 if (CurrentRoll == 1)
                 {
                     PlayerTurn = false;
@@ -29,9 +28,6 @@ namespace PigDice
                     Console.WriteLine($"Your Score this turn is currently {Player1.TurnScore}");
                 }
 
-
-                Console.WriteLine($"The Dice Roll was {CurrentRoll}");
-                //else add roll to turnscore
 
                 //choose roll or bank
                 //if bank
@@ -57,8 +53,8 @@ namespace PigDice
     public class Player
     {
         //string Name;
-        public int Score;
-        public int TurnScore;
+        public int Score = 0;
+        public int TurnScore = 0;
 
        /* public static void SetPlayerName(ref string name)
         {
