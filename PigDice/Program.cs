@@ -92,7 +92,7 @@ namespace PigDice
 
         static int DiceRoll(Random r)
         {
-            int Roll = r.Next(1, 6);
+            int Roll = r.Next(1, 7);
             return Roll;
         }
     }
