@@ -10,7 +10,7 @@ namespace PigDice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Pie Dice");
+            Console.WriteLine("Welcome to Pig Dice");
             Player Player1 = new Player();
             bool PlayerTurn = true;
             int CurrentRoll;
