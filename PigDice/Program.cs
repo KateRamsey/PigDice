@@ -10,21 +10,23 @@ namespace PigDice
     {
         static void Main(string[] args)
         {
-
+            Player Player1 = new Player();
+            Player1.Score = 5;
+            Console.WriteLine($"Player Score is {Player1.Score}");
             Console.ReadLine();
         }
     }
 
-    class Player
+    public class Player
     {
-        string Name;
-        int Score;
-        int TurnScore;
+        //string Name;
+        public int Score;
+        public int TurnScore;
 
-        static void SetPlayerName(ref string name)
+       /* public static void SetPlayerName(ref string name)
         {
             Console.WriteLine("What is your name?");
             name = Console.ReadLine();
-        }
+        } */
     }
 }
