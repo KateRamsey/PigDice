@@ -38,7 +38,7 @@ namespace PigDice
                     }
 
                     Console.WriteLine($"Your Score this turn is currently {TurnScore}");
-                    Console.Write($"Would you like to bank your {TurnScore} or roll again?");
+                    Console.Write($"Would you like to bank your {TurnScore} or roll again? ");
                     Console.WriteLine("Please enter B or R");
                     BankOrRoll = char.Parse(Console.ReadLine());
                     while (BankOrRoll != 'B' && BankOrRoll != 'b' && BankOrRoll != 'R' && BankOrRoll != 'r')
