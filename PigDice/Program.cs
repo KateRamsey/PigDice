@@ -28,6 +28,10 @@ namespace PigDice
                 else
                 {
                     TurnScore = TurnScore + CurrentRoll;
+
+                    //test win
+                    //if win display win text and break
+
                     Console.WriteLine($"Your Score this turn is currently {TurnScore}");
                     Console.Write($"Would you like to bank your {TurnScore} or roll again?");
                     Console.WriteLine("Please enter B or R");
@@ -38,24 +42,13 @@ namespace PigDice
                         BankOrRoll = char.Parse(Console.ReadLine());
                     }
 
-                    if(BankOrRoll == 'B' || BankOrRoll == 'b')
+                    if (BankOrRoll == 'B' || BankOrRoll == 'b')
                     {
-                        //if bank
-                        // add turnscore to score and break out of turn
                         Player1.Score += TurnScore;
+                        PlayerTurn = false;
                     }
-                    else if(BankOrRoll == 'R' || BankOrRoll == 'r')
-                    {
 
-                    }
-                    
                 }
-
-
-
-
-                //test win
-                //if win display win text
             }
 
 
