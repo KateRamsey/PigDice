@@ -17,6 +17,14 @@ namespace PigDice
 
     class Player
     {
+        string Name;
+        int Score;
+        int TurnScore;
 
+        static void SetPlayerName(ref string name)
+        {
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
+        }
     }
 }
