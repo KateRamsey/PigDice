@@ -31,12 +31,26 @@ namespace PigDice
                     Console.Write($"Would you like to bank your {Player1.TurnScore} or roll again?");
                     Console.WriteLine("Please enter B or R");
                     BankOrRoll = char.Parse(Console.ReadLine());
+                    while (BankOrRoll != 'B' && BankOrRoll != 'b' && BankOrRoll != 'R' && BankOrRoll != 'r')
+                    {
+                        Console.WriteLine("Please enter B or R");
+                        BankOrRoll = char.Parse(Console.ReadLine());
+                    }
+
+                    if(BankOrRoll == 'B' || BankOrRoll == 'b')
+                    {
+                            //if bank
+                            // add turnscore to score and break out of turn
+                    }
+                    else if(BankOrRoll == 'R' || BankOrRoll == 'r')
+                    {
+
+                    }
+                    
                 }
 
 
 
-                //if bank
-                // add turnscore to score and break out of turn
 
                 //test win
                 //if win display win text
