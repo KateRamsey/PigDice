@@ -31,6 +31,11 @@ namespace PigDice
 
                     //test win
                     //if win display win text and break
+                    if(Player1.Score + TurnScore >= 100)
+                    {
+                        Console.WriteLine("Wow, you have more than 100 points! You Win!!");
+                        break;
+                    }
 
                     Console.WriteLine($"Your Score this turn is currently {TurnScore}");
                     Console.Write($"Would you like to bank your {TurnScore} or roll again?");
