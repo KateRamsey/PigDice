@@ -10,20 +10,30 @@ namespace PigDice
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Pie Dice");
             Player Player1 = new Player();
             Player1.Score = 5;
             Console.WriteLine($"Player Score is {Player1.Score}");
+            bool PlayerTurn = true;
+            int CurrentRoll;
+            while (PlayerTurn)
+            {
+                CurrentRoll = DiceRoll();
+                if (CurrentRoll == 1)
+                {
+                    PlayerTurn = false;
+                }
 
-                //roll dice
-                //if roll == 1 bust
+                Console.WriteLine($"The Dice Roll was {CurrentRoll}");
                 //else add roll to turnscore
 
                 //choose roll or bank
                 //if bank
                 // add turnscore to score and break out of turn
 
-            //test win
-            //if win display win text
+                //test win
+                //if win display win text
+            }
 
 
 
