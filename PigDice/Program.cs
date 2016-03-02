@@ -10,6 +10,7 @@ namespace PigDice
     {
         static void Main(string[] args)
         {
+            Random r = new Random();
             int NumOfPlayers;
             bool PlayerTurn = true;
             int CurrentRoll;
@@ -31,9 +32,11 @@ namespace PigDice
 
             while(GameStillGoing)
             {
+                Console.WriteLine();
+                Console.WriteLine($"It's Player {(CurrentPlayerNumber+1)}'s turn!");
                 while (PlayerTurn)
                 {
-                    CurrentRoll = DiceRoll();
+                    CurrentRoll = DiceRoll(r);
                     Console.WriteLine($"The Dice Roll was {CurrentRoll}");
                     if (CurrentRoll == 1)
                     {
@@ -86,9 +89,8 @@ namespace PigDice
             Console.ReadLine();
         }
 
-        static int DiceRoll()
+        static int DiceRoll(Random r)
         {
-            Random r = new Random();
             int Roll = r.Next(1, 6);
             return Roll;
         }
