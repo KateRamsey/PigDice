@@ -49,12 +49,12 @@ namespace PigDice
 
                         if (Players[CurrentPlayerNumber].Score + TurnScore >= 100)
                         {
-                            Console.WriteLine("Wow, you have more than 100 points! You Win!!");
+                            Console.WriteLine("Wow, you have at least 100 points! You Win!!");
                             GameStillGoing = false;
                             break;
                         }
 
-                        Console.WriteLine($"Your Score this turn is currently {TurnScore}");
+                        Console.WriteLine($"Your score this turn is currently {TurnScore}, Which would make your score {(Players[CurrentPlayerNumber].Score + TurnScore)} if you bank now");
                         Console.Write($"Would you like to bank your {TurnScore} or roll again? ");
                         Console.WriteLine("Please enter B or R");
                         BankOrRoll = char.Parse(Console.ReadLine());
