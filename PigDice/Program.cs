@@ -24,6 +24,10 @@ namespace PigDice
             //data validation
 
             Player[] Players = new Player[NumOfPlayers];
+            for(int i =0; i < NumOfPlayers; i++)
+            {
+                Players[i] = new Player();
+            }
 
             while(GameStillGoing)
             {
@@ -74,6 +78,7 @@ namespace PigDice
                 {
                     CurrentPlayerNumber++;
                 }
+                TurnScore = 0;
                 PlayerTurn = true;
             }
 
