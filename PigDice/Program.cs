@@ -15,6 +15,7 @@ namespace PigDice
             bool PlayerTurn = true;
             int CurrentRoll;
             char BankOrRoll;
+            int TurnScore = 0;
 
             while (PlayerTurn)
             {
@@ -26,9 +27,9 @@ namespace PigDice
                 }
                 else
                 {
-                    Player1.TurnScore = Player1.TurnScore + CurrentRoll;
-                    Console.WriteLine($"Your Score this turn is currently {Player1.TurnScore}");
-                    Console.Write($"Would you like to bank your {Player1.TurnScore} or roll again?");
+                    TurnScore = TurnScore + CurrentRoll;
+                    Console.WriteLine($"Your Score this turn is currently {TurnScore}");
+                    Console.Write($"Would you like to bank your {TurnScore} or roll again?");
                     Console.WriteLine("Please enter B or R");
                     BankOrRoll = char.Parse(Console.ReadLine());
                     while (BankOrRoll != 'B' && BankOrRoll != 'b' && BankOrRoll != 'R' && BankOrRoll != 'r')
@@ -39,8 +40,9 @@ namespace PigDice
 
                     if(BankOrRoll == 'B' || BankOrRoll == 'b')
                     {
-                            //if bank
-                            // add turnscore to score and break out of turn
+                        //if bank
+                        // add turnscore to score and break out of turn
+                        Player1.Score += TurnScore;
                     }
                     else if(BankOrRoll == 'R' || BankOrRoll == 'r')
                     {
@@ -73,7 +75,6 @@ namespace PigDice
     {
         //string Name;
         public int Score = 0;
-        public int TurnScore = 0;
 
         /* public static void SetPlayerName(ref string name)
          {
