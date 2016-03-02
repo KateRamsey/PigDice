@@ -13,6 +13,20 @@ namespace PigDice
             Player Player1 = new Player();
             Player1.Score = 5;
             Console.WriteLine($"Player Score is {Player1.Score}");
+
+                //roll dice
+                //if roll == 1 bust
+                //else add roll to turnscore
+
+                //choose roll or bank
+                //if bank
+                // add turnscore to score and break out of turn
+
+            //test win
+            //if win display win text
+
+
+
             Console.ReadLine();
         }
     }
