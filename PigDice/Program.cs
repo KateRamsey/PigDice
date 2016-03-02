@@ -29,6 +29,13 @@ namespace PigDice
 
             Console.ReadLine();
         }
+
+        static int DiceRoll()
+        {
+            Random r = new Random();
+            int Roll = r.Next(1,6);
+            return Roll;
+        }
     }
 
     public class Player
