@@ -42,7 +42,8 @@ namespace PigDice
                     if (CurrentRoll == 1)
                     {
                         PlayerTurn = false;
-                        Console.WriteLine("Bummer, lose your turn");
+                        Console.WriteLine("Bummer, rolling a 1 ends your turn");
+                        Console.WriteLine();
                     }
                     else
                     {
@@ -75,7 +76,15 @@ namespace PigDice
 
                     }
                 }
-                Console.WriteLine("It's not your turn anymore, press enter");
+                Console.WriteLine("It's not your turn anymore");
+
+                int PlayerNumber = 1;
+                foreach(var people in Players)
+                {
+                    Console.WriteLine($"Player {PlayerNumber}'s score is {people.Score}");
+                    PlayerNumber++;
+                }
+                Console.WriteLine("Press Enter for next turn");
                 Console.ReadLine();
                 Console.Clear();
 
@@ -104,13 +113,6 @@ namespace PigDice
 
     public class Player
     {
-        //string Name;
         public int Score = 0;
-
-        /* public static void SetPlayerName(ref string name)
-         {
-             Console.WriteLine("What is your name?");
-             name = Console.ReadLine();
-         } */
     }
 }
