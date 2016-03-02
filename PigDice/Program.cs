@@ -10,13 +10,23 @@ namespace PigDice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Pig Dice");
-            Player Player1 = new Player();
+            int NumOfPlayers;
             bool PlayerTurn = true;
             int CurrentRoll;
             char BankOrRoll;
             int TurnScore = 0;
+            int CurrentPlayerNumber = 0;
+            bool GameStillGoing = true;
 
+            Console.WriteLine("Welcome to Pig Dice");
+            Console.WriteLine("How many people are playing today?");
+            NumOfPlayers = int.Parse(Console.ReadLine());
+            //data validation
+
+            Player[] Players = new Player[NumOfPlayers];
+
+        while(GameStillGoing)
+            { 
             while (PlayerTurn)
             {
                 CurrentRoll = DiceRoll();
@@ -31,7 +41,7 @@ namespace PigDice
 
                     //test win
                     //if win display win text and break
-                    if(Player1.Score + TurnScore >= 100)
+                    if (Players[CurrentPlayerNumber].Score + TurnScore >= 100)
                     {
                         Console.WriteLine("Wow, you have more than 100 points! You Win!!");
                         break;
@@ -49,13 +59,15 @@ namespace PigDice
 
                     if (BankOrRoll == 'B' || BankOrRoll == 'b')
                     {
-                        Player1.Score += TurnScore;
+                        Players[CurrentPlayerNumber].Score += TurnScore;
                         PlayerTurn = false;
                     }
 
                 }
             }
-
+            Console.WriteLine("It's not your turn anymore");
+            //rotate player
+        }
 
 
             Console.ReadLine();
