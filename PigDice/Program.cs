@@ -52,6 +52,7 @@ namespace PigDice
                         if (Players[CurrentPlayerNumber].Score + TurnScore >= 100)
                         {
                             Console.WriteLine("Wow, you have at least 100 points! You Win!!");
+                            Players[CurrentPlayerNumber].Score += TurnScore;
                             GameStillGoing = false;
                             break;
                         }
