@@ -85,7 +85,10 @@ namespace PigDice
                     Console.WriteLine($"Player {PlayerNumber}'s score is {people.Score}");
                     PlayerNumber++;
                 }
-                Console.WriteLine("Press Enter for next turn");
+                if (GameStillGoing)
+                {
+                    Console.WriteLine("Press Enter for next turn");
+                }
                 Console.ReadLine();
                 Console.Clear();
 
@@ -100,9 +103,6 @@ namespace PigDice
                 TurnScore = 0;
                 PlayerTurn = true;
             }
-
-
-            Console.ReadLine();
         }
 
         static int DiceRoll(Random r)
